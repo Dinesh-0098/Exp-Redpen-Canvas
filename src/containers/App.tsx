@@ -51,4 +51,4 @@ class App extends Component<any, IState> {
 	}
 }
 
-export default App;
+module.exports.App=App;
