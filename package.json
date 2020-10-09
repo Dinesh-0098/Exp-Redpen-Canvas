@@ -1,8 +1,8 @@
 {
-  "name": "exp-canvas",
-  "version": "0.0.33",
+  "name": "@dinesh-0098/exp-canvas",
+  "version": "1.0.0",
   "description": "Design Editor Tools with React.js + ant.design + fabric.js",
-  "main": "src/index.js",
+  "main": "dist/exp-canvas.min.js",
   "typings": "lib/index.d.ts",
   "files": [
     "dist",
@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run clean && webpack -p --config webpack.prod.js && typedoc",
+    "build": "npm run clean && webpack -p --config webpack.prod.js",
     "build:lib": "npm run tsc && webpack -p --config webpack.lib.js",
     "start": "npm install && npm run start:dev",
     "start:dev": "webpack-dev-server --config webpack.dev.js --inline",
@@ -18,12 +18,15 @@
     "deploy": "npm run build:lib && npm publish",
     "lint": "npm run tsc",
     "clean": "node scripts/clean",
-    "tsc": "tsc",
-    "typedoc": "typedoc"
+    "tsc": "tsc"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Dinesh-0098/Exp-Redpen-Canvas.git"
+    "url": "https://github.com/Dinesh-0098/Exp-Redpen-Canvas",
+    "directory": "@dinesh-0098/exp-canvas"
   },
   "keywords": [
     "React.js",
@@ -35,7 +38,7 @@
   "author": "Dinesh Patil",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/issues"
+    "url": "https://github.com/Dinesh-0098/Exp-Redpen-Canvas/issues"
   },
   "homepage": "https://github.com/Dinesh-0098/Exp-Redpen-Canvas",
   "peerDependencies": {
@@ -70,9 +73,9 @@
     "react-json-view": "^1.19.1",
     "resize-observer-polyfill": "^1.5.1",
     "store": "^2.0.12",
-    "user": "0.0.0",
     "uuid": "^7.0.3",
-    "warning": "^4.0.3"
+    "warning": "^4.0.3",
+    "webpack-node-externals": "^2.5.2"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",

@@ -32,7 +32,7 @@ const render = (Component) => {
     );
 };
 
-render(App);
+module.export= render(App);
 if (module.hot) {
     module.hot.accept('./containers/App', () => {
         render(App);

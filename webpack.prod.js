@@ -4,7 +4,7 @@ const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
-
+const nodeExternals = require('webpack-node-externals');
 const baseConfig = require('./webpack.common.js');
 
 const plugins = [
@@ -34,10 +34,10 @@ module.exports = merge(baseConfig, {
 	},
 	output: {
 		// entry에 존재하는 app.js, vendor.js로 뽑혀 나온다.
-		path: path.resolve(__dirname, 'docs'),
-		filename: 'js/[name].[chunkhash:16].js',
-		chunkFilename: 'js/[id].[chunkhash:16].js',
-		publicPath: './',
+		filename: "index.js",
+		path: path.resolve(__dirname, "dist"),
+		libraryTarget: "commonjs",
+		library: "my-design-system"
 	},
 	optimization: {
 		minimizer: [
@@ -60,4 +60,6 @@ module.exports = merge(baseConfig, {
 		],
 	},
 	plugins,
+	externals: [nodeExternals()],
+	target: "node",
 });
