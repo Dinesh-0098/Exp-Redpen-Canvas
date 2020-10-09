@@ -1,6 +1,6 @@
 {
   "name": "@dinesh-0098/exp-canvas",
-  "version": "2.0.0",
+  "version": "5.0.0",
   "description": "Design Editor Tools with React.js + ant.design + fabric.js",
   "main": "src/index.js",
   "typings": "lib/index.d.ts",
@@ -48,6 +48,7 @@
     "react-dom-factories": "^1.0.2"
   },
   "dependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.10.4",
     "animejs": "^3.0.0",
     "antd": "3.15.0",
     "classnames": "^2.2.6",
