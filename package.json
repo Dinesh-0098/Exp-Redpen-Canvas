@@ -1,8 +1,8 @@
 {
   "name": "@dinesh-0098/exp-canvas",
-  "version": "22.0.0",
+  "version": "23.0.0",
   "description": "Design Editor Tools with React.js + ant.design + fabric.js",
-  "main": "dist/js/app.js",
+  "main": "dist/index.js",
   "files": [
     "dist",
     "src/lib"
