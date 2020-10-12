@@ -28,7 +28,7 @@ const plugins = [
 ];
 module.exports = merge(baseConfig, {
 	mode: 'production',
-	devtool: 'inline-source-map',
+	devtool: 'source-map',
 	entry: {
 		vendor: ['react', 'react-dom', 'lodash', 'fabric', 'antd'],
 		app: ['@babel/polyfill', path.resolve(__dirname, 'src/index.js')],
