@@ -10,8 +10,9 @@ module.exports = {
 				options: {
 					presets: [
 						['@babel/preset-env', { modules: false }],
-						'@babel/preset-react',
+						// '@babel/preset-react',
 						'@babel/preset-typescript',
+						'@babel/react',{'plugins': ['@babel/plugin-proposal-class-properties']}
 					],
 					plugins: [
 						'@babel/plugin-transform-runtime',
