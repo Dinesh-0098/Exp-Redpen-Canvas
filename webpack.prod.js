@@ -3,9 +3,9 @@ const path = require('path');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const WorkboxPlugin = require('workbox-webpack-plugin');
-const nodeExternals = require('webpack-node-externals');
-const baseConfig = require('./webpack.common.js');
+
+
+const baseConfig = require('./webpack.config.js');
 
 const plugins = [
 	// 로더들에게 옵션을 넣어주는 플러그인
@@ -20,24 +20,20 @@ const plugins = [
 			description: `React Design Editor has started to developed direct manipulation of editable design tools like Powerpoint, We've developed it with react.js, ant.design, fabric.js`,
 		},
 	}),
-	new WorkboxPlugin.GenerateSW({
-		skipWaiting: true,
-		clientsClaim: true,
-		swDest: 'sw.js',
-	}),
 ];
 module.exports = merge(baseConfig, {
 	mode: 'production',
-	devtool: 'source-map',
+	devtool:'#source-map',
 	entry: {
 		vendor: ['react', 'react-dom', 'lodash', 'fabric', 'antd'],
 		app: ['@babel/polyfill', path.resolve(__dirname, 'src/index.js')],
 	},
 	output: {
 		// entry에 존재하는 app.js, vendor.js로 뽑혀 나온다.
-		filename: "index.js",
-		path: path.resolve(__dirname, "dist"),
-		libraryTarget: "commonjs"
+		path: path.resolve(__dirname, 'dist'),
+		filename: 'js/[name].js',
+		chunkFilename: 'js/[id].[chunkhash:16].js',
+		publicPath: './',
 	},
 	optimization: {
 		minimizer: [
@@ -60,6 +56,4 @@ module.exports = merge(baseConfig, {
 		],
 	},
 	plugins,
-	externals: [nodeExternals()],
-	target: "node",
 });
