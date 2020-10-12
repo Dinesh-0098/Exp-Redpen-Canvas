@@ -2,7 +2,7 @@
   "name": "@dinesh-0098/exp-canvas",
   "version": "17.0.0",
   "description": "Design Editor Tools with React.js + ant.design + fabric.js",
-  "main": "dist/sw.js",
+  "main": "dist/index.js",
   "files": [
     "dist",
     "src/lib"

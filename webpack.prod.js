@@ -36,8 +36,7 @@ module.exports = merge(baseConfig, {
 		// entry에 존재하는 app.js, vendor.js로 뽑혀 나온다.
 		filename: "index.js",
 		path: path.resolve(__dirname, "dist"),
-		libraryTarget: "commonjs",
-		library: "my-design-system"
+		libraryTarget: "commonjs"
 	},
 	optimization: {
 		minimizer: [
