@@ -1,12 +1,12 @@
 {
   "name": "@dinesh-0098/exp-canvas",
-  "version": "14.0.0",
+  "version": "15.0.0",
   "description": "Design Editor Tools with React.js + ant.design + fabric.js",
-  "main": "dist/index.js",
+  "main": "dist/exp-canvas.min.js",
   "typings": "lib/index.d.ts",
   "files": [
     "dist",
-    "lib"
+    "src/lib"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
